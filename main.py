@@ -16,14 +16,14 @@ for x in range(1, NUM_PAGES+1):
     driver.get(page)
     driver.implicitly_wait(4)
     print(f"page {x}")
-    elements = driver.find_elements(By.CLASS_NAME, "MosaicAsset-module__thumb___yvFP5")
+    elements = driver.find_elements(By.CLASS_NAME, "BLA_wBUJrga_SkfJ8won")
     for f, e in enumerate(elements):
         try:
             print(e.get_attribute("src"))
             urllib.request.urlretrieve(e.get_attribute('src'), f'images/img{i}.jpg')
             i += 1
         except Exception:
-            elements = driver.find_elements(By.CLASS_NAME, "MosaicAsset-module__thumb___yvFP5")
+            elements = driver.find_elements(By.CLASS_NAME, "BLA_wBUJrga_SkfJ8won")
             print(elements[f].get_attribute("src"))
             urllib.request.urlretrieve(elements[f].get_attribute('src'), f'images/img{i}.jpg')
             i += 1
